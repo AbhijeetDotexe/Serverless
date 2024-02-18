@@ -1,0 +1,16 @@
+service: awsLambdaTesting
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+
+
+functions:
+  testingFunction:
+    handler: testing.handler
+    events: 
+      - httpApi:
+          path: /testing
+          method: GET
